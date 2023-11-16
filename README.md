@@ -14,7 +14,7 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 1. Creare un array dove andranno inseriti 16 numeri generati casualmente
 
-2. Con un ciclo for creare 16 numeri generati casualmente (in base al livello di gioco):
+2. Con un ciclo while creare 16 numeri generati casualmente (in base al livello di gioco):
 
    - Se il livello è **facile**: generare 16 numeri casuali da 1 a 100
    - Se il livello è **medio**: generare 16 numeri casuali da 1 a 81
