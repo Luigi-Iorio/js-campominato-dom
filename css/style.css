@@ -1,0 +1,121 @@
+/* RESET CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* common */
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.display-none {
+  display: none;
+}
+
+/* body */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header */
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .logo {
+  height: 60px;
+  width: 60px;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.right button,
+select {
+  padding: 10px 20px;
+}
+
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  flex-grow: 1;
+  padding: 50px 20px;
+  background-color: aquamarine;
+}
+
+main h2 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  height: 90%;
+  width: 60%;
+  border: 2px solid black;
+  transition: 0.8s;
+}
+
+.cella {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cella2 {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cella3 {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.active {
+  background-color: skyblue;
+}
+
+/* footer */
+footer {
+  padding: 20px;
+  font-size: 20px;
+}
