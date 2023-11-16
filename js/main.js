@@ -82,6 +82,20 @@ bottonePlay.addEventListener("click", function () {
   // definire numero di celle in base alla scelta dell'utente
   nCelle();
 
+  // array per i numeri casuali
+  const nRandom = [];
+  // ciclo per i numeri random
+  let i = 0;
+  do {
+    const numero = Math.floor(Math.random() * nCelle()) + 1;
+    if (nRandom.includes(numero)) {
+      nRandom.push();
+    } else {
+      nRandom.push(numero);
+    }
+    i++;
+  } while (nRandom.length < 16);
+
   // per creare celle dinamicamente e assegnazione numero alle celle
   cCelle();
 });
