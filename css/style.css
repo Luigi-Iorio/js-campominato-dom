@@ -20,6 +20,7 @@
 
 /* body */
 body {
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -52,7 +53,11 @@ header .logo {
 
 .right button,
 select {
+  border: 1px solid black;
+  border-radius: 10px;
   padding: 10px 20px;
+  background-color: aquamarine;
+  font-weight: bold;
 }
 
 /* main */
@@ -63,11 +68,11 @@ main {
   gap: 30px;
   width: 100%;
   flex-grow: 1;
-  /* padding: 50px 20px; */
   background-color: aquamarine;
 }
 
 main h2 {
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -75,8 +80,8 @@ main h2 {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  height: 90%;
-  width: 60%;
+  height: 500px;
+  width: 500px;
   border: 2px solid black;
   transition: 0.8s;
 }
@@ -147,6 +152,9 @@ main h2 {
 
 /* footer */
 footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
   font-size: 20px;
 }
