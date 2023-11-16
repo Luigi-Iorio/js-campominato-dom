@@ -52,6 +52,7 @@ function cCelle() {
     elementoCella.addEventListener("click", function () {
       if (nRandom.includes(i)) {
         elementoCella.classList.add("red");
+        elementoCella.removeEventListener("click", function () {});
       } else {
         elementoCella.classList.add("active");
       }
