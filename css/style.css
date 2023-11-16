@@ -57,12 +57,13 @@ select {
 
 /* main */
 main {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 30px;
   width: 100%;
   flex-grow: 1;
-  padding: 50px 20px;
+  /* padding: 50px 20px; */
   background-color: aquamarine;
 }
 
@@ -116,6 +117,23 @@ main h2 {
 
 .red {
   background-color: crimson;
+}
+
+.modale {
+  position: absolute;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(145, 10, 10, 0.855);
+  color: white;
+}
+
+.cont {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* footer */

@@ -52,7 +52,7 @@ function cCelle() {
     elementoCella.addEventListener("click", function () {
       if (nRandom.includes(i)) {
         elementoCella.classList.add("red");
-        elementoCella.removeEventListener("click", function () {});
+        modale.classList.remove("display-none");
       } else {
         elementoCella.classList.add("active");
       }
@@ -77,6 +77,8 @@ function random() {
 /*
 PROGRAMMA
 */
+
+const modale = document.querySelector(".modale");
 
 // variabile per il titolo
 const titolo = document.querySelector("h2");
