@@ -128,6 +128,15 @@ main h2 {
   color: white;
 }
 
+.mod-vitt {
+  position: absolute;
+  z-index: 22;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(10, 145, 66, 0.855);
+  color: white;
+}
+
 .cont {
   height: 100%;
   display: flex;

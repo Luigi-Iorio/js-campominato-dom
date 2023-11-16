@@ -55,8 +55,22 @@ function cCelle() {
         modale.classList.remove("display-none");
       } else {
         elementoCella.classList.add("active");
+        if (contatore.includes(i)) {
+          contatore.push();
+        } else {
+          contatore.push(i);
+        }
       }
       console.log(`La cella cliccata è la numero: ${i}`);
+      punteggio.innerHTML = `Il tuo punteggio è: ${contatore.length}`;
+
+      // var da usare per verificare se l'utente ha vinto
+      const cell = nCelle() - 16;
+
+      // modale per vittoria decretare la vittoria
+      if (contatore.length == cell) {
+        modaleVittoria.classList.remove("display-none");
+      }
     });
   }
 }
@@ -78,7 +92,13 @@ function random() {
 PROGRAMMA
 */
 
+// contatore da confrontare con il numero celle per decretare la vittoria
+const contatore = [];
+
+const punteggio = document.querySelector(".risultato");
+
 const modale = document.querySelector(".modale");
+const modaleVittoria = document.querySelector(".mod-vitt");
 
 // variabile per il titolo
 const titolo = document.querySelector("h2");
