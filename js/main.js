@@ -4,6 +4,14 @@
 FUNZIONI
 */
 
+// Per visualizzare / non visualizzare elementi al click play
+function opacitaElementi() {
+  container.classList.remove("opacity-0");
+  container.classList.add("opacity-1");
+
+  titolo.classList.add("display-none");
+}
+
 // per creare la cella all'interno del container
 function creazioneCella(tag, nomeClasse, contenuto) {
   const cella = document.createElement(tag);
@@ -31,7 +39,7 @@ function nCelle() {
   return numeroCelle;
 }
 
-// creare celle con bg al click e stampa numero in console
+// creare celle in base al livello scelto con bg al click e stampa numero in console
 function cCelle() {
   for (let i = 1; i <= nCelle(); i++) {
     let elementoCella = "";
@@ -48,7 +56,7 @@ function cCelle() {
       container.append(elementoCella);
     }
 
-    // al click cambio bg e stampa in console numero cella
+    // eventi al click della singole celle
     elementoCella.addEventListener("click", function () {
       if (nRandom.includes(i)) {
         elementoCella.classList.add("red");
@@ -61,16 +69,13 @@ function cCelle() {
           contatore.push(i);
         }
       }
+      // stampa numero progressivo cella cliccata in console
       console.log(`La cella cliccata è la numero: ${i}`);
+      // stampa punteggio in html
       punteggio.innerHTML = `Il tuo punteggio è: ${contatore.length}`;
 
-      // var da usare per verificare se l'utente ha vinto
-      const cell = nCelle() - 16;
-
-      // modale per vittoria decretare la vittoria
-      if (contatore.length == cell) {
-        modaleVittoria.classList.remove("display-none");
-      }
+      // visualizzazione modale in caso di vittoria
+      vittoriaGioco();
     });
   }
 }
@@ -88,18 +93,22 @@ function random() {
   console.log(nRandom);
 }
 
+// Per decretare la vittoria utente
+function vittoriaGioco() {
+  // var da usare per verificare se l'utente ha vinto
+  const cell = nCelle() - 16;
+
+  // modale per vittoria decretare la vittoria
+  if (contatore.length == cell) {
+    modaleVittoria.classList.remove("display-none");
+  }
+}
+
 /*
 PROGRAMMA
 */
 
-// contatore da confrontare con il numero celle per decretare la vittoria
-const contatore = [];
-
-const punteggio = document.querySelector(".risultato");
-
-const modale = document.querySelector(".modale");
-const modaleVittoria = document.querySelector(".mod-vitt");
-
+// Variabili globali
 // variabile per il titolo
 const titolo = document.querySelector("h2");
 
@@ -110,17 +119,22 @@ const container = document.querySelector(".container");
 const bottonePlay = document.querySelector(".play");
 const bottoneReset = document.querySelector(".reset");
 
+// variabili per modali
+const modale = document.querySelector(".modale");
+const modaleVittoria = document.querySelector(".mod-vitt");
+
+// variabile per punteggio
+const punteggio = document.querySelector(".risultato");
+
 // array per i numeri casuali
 const nRandom = [];
+// array contatore da confrontare con il numero celle per decretare la vittoria
+const contatore = [];
 
 // evento al click del bottone play
 bottonePlay.addEventListener("click", function () {
-  // classi per visualizzare / non visualizzare container
-  container.classList.remove("opacity-0");
-  container.classList.add("opacity-1");
-
-  // classe per non far visualizzare il titolo
-  titolo.classList.add("display-none");
+  // Per visualizzare / non visualizzare elementi al click play
+  opacitaElementi();
 
   // definire numero di celle in base alla scelta dell'utente
   nCelle();
