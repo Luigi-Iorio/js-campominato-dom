@@ -50,10 +50,27 @@ function cCelle() {
 
     // al click cambio bg e stampa in console numero cella
     elementoCella.addEventListener("click", function () {
-      elementoCella.classList.add("active");
+      if (nRandom.includes(i)) {
+        elementoCella.classList.add("red");
+      } else {
+        elementoCella.classList.add("active");
+      }
       console.log(`La cella cliccata è la numero: ${i}`);
     });
   }
+}
+
+// per i numeri random
+function random() {
+  do {
+    const numero = Math.floor(Math.random() * nCelle()) + 1;
+    if (nRandom.includes(numero)) {
+      nRandom.push();
+    } else {
+      nRandom.push(numero);
+    }
+  } while (nRandom.length < 16);
+  console.log(nRandom);
 }
 
 /*
@@ -70,6 +87,9 @@ const container = document.querySelector(".container");
 const bottonePlay = document.querySelector(".play");
 const bottoneReset = document.querySelector(".reset");
 
+// array per i numeri casuali
+const nRandom = [];
+
 // evento al click del bottone play
 bottonePlay.addEventListener("click", function () {
   // classi per visualizzare / non visualizzare container
@@ -82,19 +102,8 @@ bottonePlay.addEventListener("click", function () {
   // definire numero di celle in base alla scelta dell'utente
   nCelle();
 
-  // array per i numeri casuali
-  const nRandom = [];
-  // ciclo per i numeri random
-  let i = 0;
-  do {
-    const numero = Math.floor(Math.random() * nCelle()) + 1;
-    if (nRandom.includes(numero)) {
-      nRandom.push();
-    } else {
-      nRandom.push(numero);
-    }
-    i++;
-  } while (nRandom.length < 16);
+  // Genera 16 numeri random e li pusha in array
+  random();
 
   // per creare celle dinamicamente e assegnazione numero alle celle
   cCelle();

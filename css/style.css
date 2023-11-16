@@ -114,6 +114,10 @@ main h2 {
   background-color: skyblue;
 }
 
+.red {
+  background-color: crimson;
+}
+
 /* footer */
 footer {
   padding: 20px;
