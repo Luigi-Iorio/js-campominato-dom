@@ -63,9 +63,7 @@ function cCelle() {
         modale.classList.remove("display-none");
       } else {
         elementoCella.classList.add("active");
-        if (contatore.includes(i)) {
-          contatore.push();
-        } else {
+        if (!contatore.includes(i)) {
           contatore.push(i);
         }
       }
