@@ -84,9 +84,7 @@ function cCelle() {
 function random() {
   do {
     const numero = Math.floor(Math.random() * nCelle()) + 1;
-    if (nRandom.includes(numero)) {
-      nRandom.push();
-    } else {
+    if (!nRandom.includes(numero)) {
       nRandom.push(numero);
     }
   } while (nRandom.length < 16);
